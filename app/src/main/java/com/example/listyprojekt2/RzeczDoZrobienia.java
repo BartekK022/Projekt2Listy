@@ -11,6 +11,10 @@ public class RzeczDoZrobienia {
         CzyZrobione = false;
     }
 
+    public void odwrocRobienie() {
+        CzyZrobione = !CzyZrobione;
+    }
+
     @Override
     public String toString() {
         return "RzeczDoZrobienia{" +

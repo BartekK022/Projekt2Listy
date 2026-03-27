@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,6 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    EditText editTextNazwa, editTextWaga;
+    Button button;
 
     ArrayList<RzeczDoZrobienia> arrayListRzeczyDoZrobienia;
     ArrayAdapter<RzeczDoZrobienia> arrayAdapterRzeczyDoZrobienia;
@@ -40,6 +44,22 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         arrayListRzeczyDoZrobienia.get(position).odwrocRobienie();
+                        arrayAdapterRzeczyDoZrobienia.notifyDataSetChanged();
+                    }
+                }
+        );
+
+        button = findViewById(R.id.button);
+        editTextNazwa = findViewById(R.id.editTextNazwa);
+        editTextWaga = findViewById(R.id.editTextNumber2);
+
+        button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String nazwa = editTextNazwa.getText().toString();
+                        int waga = Integer.parseInt(editTextWaga.getText().toString());
+                        arrayListRzeczyDoZrobienia.add(new RzeczDoZrobienia(nazwa,waga));
                         arrayAdapterRzeczyDoZrobienia.notifyDataSetChanged();
                     }
                 }

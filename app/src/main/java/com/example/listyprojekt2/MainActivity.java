@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         arrayListRzeczyDoZrobienia.add(new RzeczDoZrobienia("Posprzatac pokoj", 1));
         arrayListRzeczyDoZrobienia.add(new RzeczDoZrobienia("kupic chleb", 5));
         arrayAdapterRzeczyDoZrobienia = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListRzeczyDoZrobienia);
+        listView.setAdapter(arrayAdapterRzeczyDoZrobienia);
 
 
 

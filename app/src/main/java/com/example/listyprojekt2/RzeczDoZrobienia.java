@@ -10,4 +10,13 @@ public class RzeczDoZrobienia {
         this.waga = waga;
         CzyZrobione = false;
     }
+
+    @Override
+    public String toString() {
+        return "RzeczDoZrobienia{" +
+                "CoZrobie='" + CoZrobie + '\'' +
+                ", CzyZrobione=" + CzyZrobione +
+                ", waga=" + waga +
+                '}';
+    }
 }
